@@ -4,9 +4,7 @@ const dropdowns = document.querySelectorAll(".dropdown-toggle");
 const toggleMenu = document.getElementById("toggle-menu");
 const mobileMenu = document.querySelector(".mobile-menu");
 const logos = document.querySelectorAll(".logo");
-const mobileDropdownsToggle = document.querySelectorAll(
-    ".mobile-nav .dropdown-toggle"
-);
+const mobileDropdownsToggle = document.querySelectorAll(".mobile-nav .dropdown-toggle");
 
 dropdowns.forEach((dropdown) =>
     dropdown.addEventListener("click", (e) => e.preventDefault())
@@ -47,3 +45,11 @@ toggleMenu.addEventListener("click", function () {
     this.classList.toggle("active");
     mobileMenu.classList.toggle("open");
 });
+
+
+//Obtener año FOOTER
+// Obtener el año actual
+var currentYear = new Date().getFullYear();
+// Mostrar el año en el elemento HTML
+var yearElement = document.getElementById("year");
+yearElement.textContent = currentYear;

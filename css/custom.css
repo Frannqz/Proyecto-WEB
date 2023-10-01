@@ -113,7 +113,14 @@ header.show-bg {
 }
 
 .logo img {
-    width: 9rem;
+    width: 75px;
+    border-radius: 50px;
+    display: block;
+
+}
+
+#mobile-logo {
+    display: none;
 }
 
 /*  */

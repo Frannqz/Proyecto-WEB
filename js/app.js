@@ -52,3 +52,22 @@ var currentYear = new Date().getFullYear();
 // Mostrar el año en el elemento HTML
 var yearElement = document.getElementById("year");
 yearElement.textContent = currentYear;
+
+
+
+// Función para mostrar u ocultar el logo según el tamaño de la pantalla
+function toggleLogo() {
+    var logo = document.getElementById('logo');
+    var mobileLogo = document.getElementById('mobile-logo');
+
+    if (window.innerWidth <= 768) { // Cambiar el ancho
+        logo.style.display = 'none';
+        mobileLogo.style.display = 'block';
+    } else {
+        logo.style.display = 'block';
+        mobileLogo.style.display = 'none';
+    }
+}
+// Llamar a la función al cargar la página y al cambiar el tamaño de la ventana
+window.onload = toggleLogo;
+window.addEventListener('resize', toggleLogo);

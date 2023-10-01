@@ -112,12 +112,12 @@ header.show-bg {
     align-items: center;
 }
 
-.logo img {
+/* .logo {
     width: 75px;
     border-radius: 50px;
     display: block;
 
-}
+} */
 
 #mobile-logo {
     display: none;

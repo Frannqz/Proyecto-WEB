@@ -429,7 +429,10 @@ footer {
 }
 
 
-/* FORM LOGIN */
+
+
+
+/* FORM LOGIN Y SIGN */
 .container-form {
     max-width: 440px;
     padding: 0 10px;
@@ -537,5 +540,52 @@ form .button input:hover {
 }
 
 form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+label {
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* CANCIONERO */
+.container-songs {
+    max-width: 95%;
+    padding: 0 0px;
+    margin: 80px auto auto;
+    background: var(--color-monarca);
+    text-align: center;
+    color: black;
+}
+
+.single-song-area .song-thumbnail {
+    flex: 0 0 135px;
+    max-width: 135px;
+    width: 135px;
+    margin-right: 50px;
+}
+
+.single-song-area .song-play-area {
+    width: 100%;
+    background-color: #33383b;
+    padding: 15px 30px 20px;
+}
+
+.song-play-area {
+    width: 100%;
+    background-color: #262626;
+    padding: 15px 30px 20px;
+}
+
+.song-play-area .song-name p {
+    color: var(--color-light);
+}
+
+.song-play-area .song-name a {
+    color: var(--color-light);
     text-decoration: underline;
 }

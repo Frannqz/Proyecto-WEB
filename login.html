@@ -75,9 +75,31 @@
             </nav>
         </div>
     </div>
-    <br>
-    <br>
 
+    <div class="container-form">
+        <div class="wrapper">
+            <p class="title">Inicia Sesión</p>
+            <form action="" method="post" target="">
+                <div class="row">
+                    <label>
+                        <i class="fas fa-user"></i>
+                        <input type="email" placeholder="Correo electrónico" name="correoElectronico" required>
+                    </label>
+                </div>
+                <div class="row">
+                    <label>
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Contraseña" name="Contraseña" required>
+                    </label>
+                </div>
+                <div class="pass"><a href="#">Recuperar contraseña?</a></div>
+                <div class="row button">
+                    <input type="submit" value="Iniciar">
+                </div>
+                <div class="signup-link">No tienes cuenta? <a href="registrar.html">Registrate ahora</a></div>
+            </form>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer-distributed">
@@ -95,6 +117,7 @@
             <p>Trío Monarcas &copy; <span id="year"></span> </p>
         </div>
     </footer>
+
     <script defer src="js/app.js"></script>
 
 </body>

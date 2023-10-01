@@ -47,8 +47,7 @@ toggleMenu.addEventListener("click", function () {
 });
 
 
-//Obtener año FOOTER
-// Obtener el año actual
+//Obtener año actual FOOTER
 var currentYear = new Date().getFullYear();
 // Mostrar el año en el elemento HTML
 var yearElement = document.getElementById("year");

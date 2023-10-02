@@ -587,17 +587,24 @@ label {
 
 
 
-
-
-
 /* CANCIONERO */
-.container-songs {
+.title-songs {
     max-width: 95%;
-    padding: 0 0px;
-    margin: 80px auto auto;
+    margin: 80px auto 0px auto;
     background: var(--color-monarca);
     text-align: center;
     color: black;
+    font-weight: 700;
+    border-radius: 20px 20px 0 0;
+}
+
+.container-songs {
+    max-width: 95%;
+    padding: 0 0px;
+    margin: 0px auto auto;
+    background: #33383b;
+    text-align: center;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .single-song-area .song-thumbnail {
@@ -611,13 +618,9 @@ label {
     width: 100%;
     background-color: #33383b;
     padding: 15px 30px 20px;
+    border-radius: 0px 0px 20px 20px;
 }
 
-.song-play-area {
-    width: 100%;
-    background-color: #262626;
-    padding: 15px 30px 20px;
-}
 
 .song-play-area .song-name p {
     color: var(--color-light);
@@ -626,4 +629,37 @@ label {
 .song-play-area .song-name a {
     color: var(--color-light);
     text-decoration: underline;
+}
+
+audio {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fa7f1b;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: var(--color-very-light);
+}
+
+@media (min-width: 769px) {
+
+    /* Estilos para el contenedor de canciones */
+    .container-songs {
+        display: flex;
+        /* Usar Flexbox para el diseño */
+        flex-wrap: wrap;
+        /* Permitir que los elementos se envuelvan a la siguiente fila si no caben */
+        justify-content: space-between;
+        /* Espacio uniforme entre las columnas */
+    }
+
+    .single-song-area {
+        flex-basis: calc(33.33% - 20px);
+        /* Ancho de cada columna (33.33% para tres columnas en una fila) */
+        margin-bottom: 20px;
+        /* Espacio entre las columnas */
+    }
 }

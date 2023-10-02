@@ -118,9 +118,6 @@ header {
     display: none;
 }
 
-/*  */
-.title {}
-
 .cursive {
     font-family: var(--font-secondary);
 }
@@ -640,11 +637,8 @@ audio::-webkit-media-controls-panel {
 }
 
 @media (min-width: 769px) {
-
-    /* Estilos para el contenedor de canciones */
     .container-songs {
         display: flex;
-        /* Usar Flexbox para el diseño */
         flex-wrap: wrap;
         /* Permitir que los elementos se envuelvan a la siguiente fila si no caben */
         justify-content: space-between;

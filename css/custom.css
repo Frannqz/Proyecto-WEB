@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@600&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
 
 :root {
-    --font-primary: "Ubuntu", sans-serif;
+    --font-primary: 'Manrope', sans-serif;
+    --font-sub: "Ubuntu", sans-serif;
     --font-secondary: "Merienda", cursive;
     --color-very-light: hsl(0, 0%, 100%);
     --color-light: #e7e7e7;
@@ -9,7 +11,7 @@
     --color-monarca: #ff9b49;
 }
 
-/* BASE STYLE */
+/* ESTILO BASE*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,6 +31,30 @@ body {
     overflow-x: hidden;
 }
 
+/* ******************* MENU NAVEGACION ******************* */
+/* HEADER */
+header {
+    background: var(--color-primary);
+    padding: 1rem 0rem;
+    /* NAV persistente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+.container-nav {
+    width: 95vw;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
 a {
     text-decoration: none;
 }
@@ -45,41 +71,18 @@ p {
     line-height: 1.7;
 }
 
-.container {
-    width: 90vw;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.heading-2 {
-    font-family: var(--font-secondary);
-    font-weight: 600;
-    font-size: 3rem;
-}
-
-.heading-3 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1.3rem;
-}
-
 .btn {
     display: inline-block;
-    outline: 0;
-    border: 0;
     cursor: pointer;
     border-radius: 5rem;
-    background: transparent;
     color: var(--color-very-light);
     font-weight: 500;
     transition: 0.3s ease-in-out;
 }
 
-.btn:not(.btn-transparent) {
-    padding: 1.1rem 3rem;
-}
 
 .btn-white {
+    padding: 1.1rem 3rem;
     background-color: var(--color-very-light);
     color: var(--color-monarca);
 }
@@ -90,37 +93,10 @@ p {
     color: black;
 }
 
-/* HEADER */
-header {
-    background: var(--color-primary);
-    padding: 2.5rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99999;
-}
-
-
-.navbar {
-    display: flex;
-    align-items: center;
-}
-
-/* .logo {
-    width: 75px;
-    border-radius: 50px;
-    display: block;
-
-} */
-
-#mobile-logo {
-    display: none;
-}
-
 .cursive {
     font-family: var(--font-secondary);
 }
+
 
 .navbar .nav-list {
     display: flex;
@@ -142,7 +118,13 @@ header {
     color: var(--color-light);
 }
 
+.navbar .cta .btn-transparent:hover {
+    transition: 0.3s ease-in-out;
+    color: var(--color-monarca);
+}
+
 .navbar .nav-list .nav-link:hover {
+    transition: 0.3s ease-in-out;
     color: var(--color-monarca);
 }
 
@@ -155,12 +137,8 @@ header {
     color: var(--color-light);
 }
 
-.navbar .cta .btn-transparent:hover {
-    color: var(--color-monarca);
-}
-
-/* **************************************************** */
-/* MOBILE MENU */
+/* ***************MENU NAVEGACION MOBILE************************* */
+/* MENU MOBILE */
 .mobile-menu {
     position: fixed;
     top: 65px;
@@ -169,7 +147,7 @@ header {
     height: 100%;
     z-index: 998;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.15s ease;
 }
 
 /* Estilo para el pseudo-elemento que crea el fondo de desenfoque */
@@ -178,14 +156,14 @@ header {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     /* Color de fondo semi-transparente */
-    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
     /* Aplicar el filtro de desenfoque */
-    z-index: -1;
+    backdrop-filter: blur(1rem);
     /* Colocar detrás del menú */
-    display: none;
+    z-index: -1;
     /* Inicialmente oculto */
+    display: none;
 }
 
 .mobile-menu.open {
@@ -198,14 +176,14 @@ header {
     display: block;
 }
 
-.mobile-menu .container {
+.mobile-menu .container-nav {
     height: 100%;
 }
 
 .mobile-menu .mobile-nav {
-    background-color: #fff;
-    border-radius: 0.7rem;
-    box-shadow: 0 1.5rem 3.5rem 0 rgba(0, 0, 0, 0.55);
+    background-color: var(--color-light);
+    border-radius: 0rem 0rem 2rem 2rem;
+    box-shadow: 0 1.5rem 3.5rem 0 rgba(0, 0, 0, 0.7);
     padding: 3rem;
 }
 
@@ -213,45 +191,35 @@ header {
     text-align: center;
 }
 
-.mobile-menu a {
-    font-weight: 500;
-}
-
 .mobile-menu .nav-list .nav-item:not(:last-child) {
     margin-bottom: 2rem;
 }
 
 .mobile-menu .nav-list .nav-link {
-    color: hsl(208, 49%, 24%);
+    color: var(--color-primary);
     font-size: 1.7rem;
-}
-
-.mobile-nav .nav-list i {
-    color: hsl(13, 100%, 72%);
 }
 
 .mobile-menu .cta {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.5rem;
-    border-top: 1px solid var(--color-light);
+    margin-top: 3.5rem;
 }
 
 .mobile-menu .cta .login-link {
-    color: hsl(208, 49%, 24%);
-    margin-top: 2.5rem;
+    color: var(--color-primary);
+    margin-top: 3.5rem;
     font-family: var(--font-secondary);
     font-weight: 600;
     font-size: 1.7rem;
 }
 
 .mobile-menu .cta .btn-orange {
-    background-image: linear-gradient(to right,
-            hsl(13, 100%, 72%),
-            hsl(353, 100%, 62%));
+    background-color: var(--color-monarca);
     margin-top: 2rem;
     padding: 1.1rem 3.5rem;
+    color: var(--color-primary);
 }
 
 /* TOGGLE MENU */
@@ -267,8 +235,8 @@ header {
 .toggle-menu .hamburger-menu {
     display: block;
     width: 3.2rem;
-    height: 3px;
-    background: #fff;
+    height: 0.3rem;
+    background: var(--color-light);
     position: relative;
     transition: 0.3s ease;
 }
@@ -282,7 +250,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: var(--color-light);
     transition: transform 0.3s ease;
 }
 
@@ -318,57 +286,14 @@ header {
     }
 }
 
-/* DESENFOQUE DE PAG
-.blur-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-} */
 
-
+/* ***************FOOTER************************************ */
 /* FOOTER */
 footer {
     margin: 100px 0px;
     background-color: var(--color-primary);
     padding: 15px 0px;
 }
-
-/* MEDIA QUERY */
-@media screen and (min-width: 1440px) {
-    .container {
-        width: 75vw;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .footer-container {
-        grid-template-columns: 25rem 1fr;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    header {
-        padding: 2rem 0;
-    }
-
-    .container {
-        width: 95vw;
-    }
-
-
-    .navbar :is(.nav-list, .cta) {
-        display: none;
-    }
-}
-
 
 /* Footer links */
 .footer-distributed p.footer-links {
@@ -433,26 +358,33 @@ footer {
     color: hsl(207, 13%, 34%);
 }
 
-/* Media Queries */
 
-@media (max-width: 600px) {
 
-    .footer-distributed .footer-nav,
-    .footer-distributed .footer-icon {
-        text-align: center;
+/* ***************RESPONSIVE DESGIN************************* */
+
+@media screen and (min-width: 1440px) {
+
+    /* Container de navegacion */
+    .container-nav {
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width: 769px) {
+
+    /* Header mobile */
+    header {
+        padding: 2rem 0;
     }
 
-    .footer-distributed .footer-icon {
-        float: none;
-        margin: 0 auto 10px;
-    }
-
-    .footer-distributed .footer-nav p.footer-links {
-        line-height: 1.8;
+    .navbar :is(.nav-list, .cta) {
+        display: none;
     }
 }
 
 @media screen and (min-width: 769px) {
+
+    /* Se oculta el menu hamburguesa */
     .toggle-menu {
         display: none;
     }
@@ -460,28 +392,28 @@ footer {
 
 
 
-
+/* ************ FORMULARIOS ************************ */
 
 /* FORM LOGIN Y SIGN */
 .container-form {
-    max-width: 440px;
-    padding: 0 10px;
-    margin: 170px auto;
+    max-width: 44rem;
+    padding: 0 1rem;
+    margin: 15rem auto;
 }
 
 .wrapper {
     width: 100%;
     background: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0px 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .wrapper .title-form {
-    height: 90px;
+    height: 9rem;
     background: var(--color-primary);
-    border-radius: 5px 5px 0 0;
-    color: #fff;
-    font-size: 30px;
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: var(--color-very-light);
+    font-size: 3rem;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -489,12 +421,12 @@ footer {
 }
 
 .wrapper form {
-    padding: 30px 25px 25px 25px;
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
 }
 
 .wrapper form .row {
-    height: 45px;
-    margin-bottom: 15px;
+    height: 4.5rem;
+    margin-bottom: 1.5rem;
     position: relative;
 }
 
@@ -502,66 +434,62 @@ footer {
     height: 100%;
     width: 100%;
     outline: none;
-    padding-left: 60px;
-    border-radius: 5px;
+    padding-left: 6rem;
+    border-radius: 0.5rem;
     border: 1px solid lightgrey;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 form .row input:focus {
     border-color: var(--color-monarca);
-    box-shadow: inset 0px 0px 1px 1px rgba(188, 139, 47, 0.967);
-}
-
-form .row input::placeholder {
-    color: grey;
+    box-shadow: inset 0rem 0rem 0.1rem 0.1rem var(--color-monarca);
 }
 
 .wrapper form .row i {
     position: absolute;
-    width: 47px;
+    width: 4.7rem;
     height: 100%;
     color: #fff;
-    font-size: 18px;
+    font-size: 1.8rem;
     background: var(--color-monarca);
-    border-radius: 5px 0 0 5px;
+    border-radius: 0.5rem 0 0 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.wrapper form .pass {
-    margin: -8px 0 20px 0;
+.wrapper form .recuContra {
+    margin: -0.8rem 0 2rem 0;
 }
 
-.wrapper form .pass a {
+.wrapper form .recuContra a {
     color: black;
-    font-size: 17px;
+    font-size: 1.7rem;
     text-decoration: none;
 }
 
-.wrapper form .pass a:hover {
+.wrapper form .recuContra a:hover {
     color: var(--color-monarca);
 }
 
 .wrapper form .button input {
-    color: #fff;
-    font-size: 20px;
+    color: var(--color-light);
+    font-size: 2rem;
     font-weight: 500;
-    padding-left: 0px;
+    padding-left: 0;
     background: var(--color-primary);
     cursor: pointer;
 }
 
 form .button input:hover {
     transition: all 0.3s;
-    background: #44494b;
+    background: #535c5f;
 }
 
 .wrapper form .signup-link {
     text-align: center;
-    margin-top: 20px;
-    font-size: 17px;
+    margin-top: 2rem;
+    font-size: 1.7rem;
 }
 
 .wrapper form .signup-link a {
@@ -577,40 +505,38 @@ label {
     cursor: pointer;
 }
 
-
-
-/* CANCIONERO */
+/* **************** CANCIONERO ********************************* */
 .title-songs {
     max-width: 95%;
-    margin: 80px auto 0px auto;
+    margin: 8rem auto 0 auto;
     background: var(--color-monarca);
     text-align: center;
     color: black;
     font-weight: 700;
-    border-radius: 20px 20px 0 0;
+    border-radius: 2rem 2rem 0 0;
 }
 
 .container-songs {
     max-width: 95%;
-    padding: 0 0px;
-    margin: 0px auto auto;
+    padding: 0rem 0rem;
+    margin: 0rem auto auto;
     background: #33383b;
     text-align: center;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0rem 0rem 2rem 2rem;
 }
 
 .single-song-area .song-thumbnail {
-    flex: 0 0 135px;
-    max-width: 135px;
-    width: 135px;
-    margin-right: 50px;
+    flex: 0 0 13.5rem;
+    max-width: 13.5rem;
+    width: 13.5rem;
+    margin-right: 5rem;
 }
 
 .single-song-area .song-play-area {
     width: 100%;
     background-color: #33383b;
-    padding: 15px 30px 20px;
-    border-radius: 0px 0px 20px 20px;
+    padding: 1.5rem 3rem 2rem;
+    border-radius: 0rem 0rem 2rem 2rem;
 }
 
 
@@ -624,12 +550,12 @@ label {
 }
 
 audio {
-    margin-top: 20px;
+    margin-top: 2rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 40rem;
     background-color: #fa7f1b;
-    border-radius: 50px;
-    padding: 5px;
+    border-radius: 5rem;
+    padding: 0.5rem;
 }
 
 audio::-webkit-media-controls-panel {
@@ -639,16 +565,17 @@ audio::-webkit-media-controls-panel {
 @media (min-width: 769px) {
     .container-songs {
         display: flex;
-        flex-wrap: wrap;
         /* Permitir que los elementos se envuelvan a la siguiente fila si no caben */
-        justify-content: space-between;
+        flex-wrap: wrap;
         /* Espacio uniforme entre las columnas */
+        justify-content: space-between;
     }
 
     .single-song-area {
-        flex-basis: calc(33.33% - 20px);
         /* Ancho de cada columna (33.33% para tres columnas en una fila) */
-        margin-bottom: 20px;
+        flex-basis: calc(33.33% - 20px);
         /* Espacio entre las columnas */
+        margin-bottom: 20px;
+
     }
 }

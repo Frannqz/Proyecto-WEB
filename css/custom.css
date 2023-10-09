@@ -280,12 +280,6 @@ p {
     transform: rotate(135deg);
 }
 
-@media (min-width:769px) {
-    .mobile-menu {
-        display: none;
-    }
-}
-
 
 /* ***************FOOTER************************************ */
 /* FOOTER */
@@ -365,10 +359,19 @@ footer {
 @media screen and (min-width: 1440px) {
 
     /* Container de navegacion */
-    .container-nav {
-        width: 75vw;
+}
+
+@media (min-width:769px) {
+    .mobile-menu {
+        display: none;
+    }
+
+    /* Se oculta el menu hamburguesa */
+    .toggle-menu {
+        display: none;
     }
 }
+
 
 @media screen and (max-width: 769px) {
 
@@ -382,13 +385,6 @@ footer {
     }
 }
 
-@media screen and (min-width: 769px) {
-
-    /* Se oculta el menu hamburguesa */
-    .toggle-menu {
-        display: none;
-    }
-}
 
 
 

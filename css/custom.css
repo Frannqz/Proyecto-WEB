@@ -355,7 +355,7 @@ footer {
 
 
 /* ***************RESPONSIVE DESGIN************************* */
-@media (min-width:769px) {
+@media (min-width:844px) {
 
     /* Se oculta el menu  y menu hamburguesa */
     .mobile-menu,
@@ -365,7 +365,7 @@ footer {
 }
 
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 844px) {
 
     /* Header mobile */
     header {

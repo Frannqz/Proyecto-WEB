@@ -60,7 +60,7 @@ function toggleLogo() {
     var logo = document.getElementById('logo');
     var mobileLogo = document.getElementById('mobile-logo');
 
-    if (window.innerWidth <= 768) { // Cambiar el ancho
+    if (window.innerWidth <= 769) { // Cambiar el ancho
         logo.style.display = 'none';
         mobileLogo.style.display = 'block';
     } else {

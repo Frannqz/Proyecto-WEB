@@ -280,7 +280,7 @@ p {
     transform: rotate(135deg);
 }
 
-@media (min-width:992px) {
+@media (min-width:769px) {
     .mobile-menu {
         display: none;
     }

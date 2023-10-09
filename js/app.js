@@ -1,14 +1,10 @@
 const header = document.querySelector("header");
 const heroSection = document.querySelector(".hero");
-const dropdowns = document.querySelectorAll(".dropdown-toggle");
 const toggleMenu = document.getElementById("toggle-menu");
 const mobileMenu = document.querySelector(".mobile-menu");
 const logos = document.querySelectorAll(".logo");
-const mobileDropdownsToggle = document.querySelectorAll(".mobile-nav .dropdown-toggle");
+const mobileDropdownsToggle = document.querySelectorAll(".mobile-nav");
 
-dropdowns.forEach((dropdown) =>
-    dropdown.addEventListener("click", (e) => e.preventDefault())
-);
 
 mobileDropdownsToggle.forEach((dropdown) =>
     dropdown.addEventListener("click", toggleOpen)
@@ -46,15 +42,6 @@ toggleMenu.addEventListener("click", function () {
     mobileMenu.classList.toggle("open");
 });
 
-
-//Obtener año actual FOOTER
-var currentYear = new Date().getFullYear();
-// Mostrar el año en el elemento HTML
-var yearElement = document.getElementById("year");
-yearElement.textContent = currentYear;
-
-
-
 // Función para mostrar u ocultar el logo según el tamaño de la pantalla
 function toggleLogo() {
     var logo = document.getElementById('logo');
@@ -68,6 +55,16 @@ function toggleLogo() {
         mobileLogo.style.display = 'none';
     }
 }
+
+//Obtener año actual FOOTER
+var currentYear = new Date().getFullYear();
+// Mostrar el año en el elemento HTML
+var yearElement = document.getElementById("year");
+yearElement.textContent = currentYear;
+
+
+
+
 // Llamar a la función al cargar la página y al cambiar el tamaño de la ventana
 window.onload = toggleLogo;
 window.addEventListener('resize', toggleLogo);

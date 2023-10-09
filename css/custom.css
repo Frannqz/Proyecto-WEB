@@ -50,7 +50,7 @@ header {
     padding: 0 1.5rem;
 }
 
-.navbar {
+.escr-navbar {
     display: flex;
     align-items: center;
 }
@@ -98,41 +98,41 @@ p {
 }
 
 
-.navbar .nav-list {
+.escr-navbar .nav-list {
     display: flex;
     align-items: center;
     margin-left: 5rem;
 }
 
-.navbar .nav-list .nav-item {
+.escr-navbar .nav-list .nav-item {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.navbar .nav-list .nav-item:not(:last-child) {
+.escr-navbar .nav-list .nav-item:not(:last-child) {
     margin-right: 3rem;
 }
 
-.navbar .nav-list .nav-link {
+.escr-navbar .nav-list .nav-link {
     color: var(--color-light);
 }
 
-.navbar .cta .btn-transparent:hover {
+.escr-navbar .cta .btn-transparent:hover {
     transition: 0.3s ease-in-out;
     color: var(--color-monarca);
 }
 
-.navbar .nav-list .nav-link:hover {
+.escr-navbar .nav-list .nav-link:hover {
     transition: 0.3s ease-in-out;
     color: var(--color-monarca);
 }
 
-.navbar .cta {
+.escr-navbar .cta {
     margin-left: auto;
 }
 
-.navbar .cta .btn-transparent {
+.escr-navbar .cta .btn-transparent {
     margin-right: 2rem;
     color: var(--color-light);
 }
@@ -373,7 +373,7 @@ footer {
         font-size: 2rem;
     }
 
-    .navbar :is(.nav-list, .cta) {
+    .escr-navbar :is(.nav-list, .cta) {
         display: none;
     }
 }
